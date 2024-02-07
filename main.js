@@ -195,3 +195,28 @@ const coleccion = [
     {id:12, tipo:'Album', genero:'Electrónica', subgenero:'Dance/Experimental', artista:'Mark Fell', nombre:'The Neurobiology of Moral Decision Making', añoDeLanzamiento:'2015', stock:2},
 
 ]
+
+class Eleccion {
+    constructor (coleccion){
+        this.coleccion = coleccion;
+    }
+
+    GetAlbumById(id){
+        const album = this.coleccion.find (item => item.id === id);
+        return album ? album : "No contamos con el ejemplar solicitado";
+    }
+
+    GetAlbumByGenero (genero){
+        const album = this.coleccion.filter (item =>item.genero.toLowerCase().includes(genero.toLowerCase()));
+        return album;
+
+    }
+}
+
+const seleccion = new Eleccion (coleccion);
+const articulo = seleccion.GetAlbumById (parseInt(prompt('Buscar por id')));
+const busqueda = seleccion.GetAlbumByGenero (prompt('Buscar albúm por genero'));
+
+console.table(articulo);
+console.table(busqueda);
+
