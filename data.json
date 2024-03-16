@@ -1,0 +1,24 @@
+{
+    "coleccion": [
+    {"id":0, "tipo":"Album", "id_genero":"Rock", "subgenero":"Indie/Independiente/Alternativo", "artista":"King Krule", "nombre":"Flimsier", "añoDeLanzamiento":"2023", "stock":15},
+    {"id":1, "tipo":"EP", "id_genero":"Electrónica", "subgenero":"IDM/Dance", "artista":"Aphex Twin", "nombre":"Blackbox Life Recorder 21f / In a Room7 F760", "añoDeLanzamiento":"2023", "stock":11},
+    {"id":2, "tipo":"Album", "id_genero":"Rock", "subgenero":"Math Rock", "artista":"Hella", "nombre":"Hold Your Horse Is", "añoDeLanzamiento":"2002", "stock":10},
+    {"id":3, "tipo":"Album", "id_genero":"Rock", "subgenero":" Psicodélico/Experimental", "artista":"The Beatles", "nombre":"Sgt. Pepper´s Lonely Hearts Cub Band", "añoDeLanzamiento":"1967", "stock":56},
+    {"id":4, "tipo":"Album", "id_genero":"Pop/Experimental", "subgenero":"Pop/Reguetón/Alternativo/Experimental/Avant-garde", "artista":"Rosalía", "nombre":"Motomami", "añoDeLanzamiento":"2022", "stock":124},
+    {"id":5, "tipo":"Album", "id_genero":"Pop/Experimental", "subgenero":"Latin/Folk/Electrónica/Pop", "artista":"Helado Negro", "nombre":"Far in", "añoDeLanzamiento":"2021", "stock":22},
+    {"id":6, "tipo":"Album", "id_genero":"Electrónica", "subgenero":"Dance/Club", "artista":"Caribou", "nombre":"Suddenly", "añoDeLanzamiento":"2020", "stock":12},
+    {"id":7, "tipo":"Album", "id_genero":"Reggae", "subgenero":"-", "artista":"Bob Marley & The Wailers", "nombre":"Uprising", "añoDeLanzamiento":"1980", "stock":15},
+    {"id":8, "tipo":"Album", "id_genero":"Jazz", "subgenero":"Modal", "artista":"Miles Davis", "nombre":"Kind of Blue", "añoDeLanzamiento":"1959", "stock":50},
+    {"id":9, "tipo":"Album", "id_genero":"Clásica", "subgenero":"Post moderna/ Minimalista", "artista":"Philip Glass", "nombre":"Glassworks", "añoDeLanzamiento":"1981", "stock":14},
+    {"id":10,"tipo":"Album", "id_genero":"Jazz", "subgenero":"Smooth", "artista":"Bill Evans", "nombre":"You Must Believe In Spring", "añoDeLanzamiento":"1981", "stock":17},
+    {"id":11, "tipo":"Album", "id_genero":"Electrónica", "subgenero":"Dance/Experimental", "artista":"Mark Fell", "nombre":"The Neurobiology of Moral Decision Making", "añoDeLanzamiento":"2015", "stock":2}
+    ],
+    "genero":[
+        {"id_genero":1, "nombre": "Rock"},
+        {"id_genero":1, "nombre": "Pop/Experimental"},
+        {"id_genero":1, "nombre": "Electrónica"},
+        {"id_genero":1, "nombre": "Reggae"},
+        {"id_genero":1, "nombre": "Jazz"},
+        {"id_genero":1, "nombre": "Clásica"}
+    ]
+}
