@@ -181,19 +181,18 @@
 
 
 const coleccion = [
-    {id:0, tipo:'Album', genero:'Rock', subgenero:'Indie/Independiente/Alternativo', artista:'King Krule', nombre:'Flimsier', añoDeLanzamiento:'2023', stock:15},
-    {id:1, tipo:'EP', genero:'Electrónica', subgenero:'IDM/Dance', artista:'Aphex Twin', nombre:'Blackbox Life Recorder 21f / In a Room7 F760', añoDeLanzamiento:'2023', stock:11},
-    {id:2, tipo:'Album', genero:'Rock', subgenero:'Math Rock', artista:'Hella', nombre:'Hold Your Horse Is', añoDeLanzamiento:'2002', stock:10},
-    {id:3, tipo:'Album', genero:'Rock', subgenero:' Psicodélico/Experimental', artista:'The Beatles', nombre:'Sgt. Pepper´s Lonely Hearts Cub Band', añoDeLanzamiento:'1967', stock:56},
-    {id:4, tipo:'Album', genero:'Pop/Experimental', subgenero:'Pop/Reguetón/Alternativo/Experimental/Avant-garde', artista:'Rosalía', nombre:'Motomami', añoDeLanzamiento:'2022', stock:124},
-    {id:5, tipo:'Album', genero:'Experimental/Pop', subgenero:'Latin/Folk/Electrónica/Pop', artista:'Helado Negro', nombre:'Far in', añoDeLanzamiento:'2021', stock:22},
-    {id:6, tipo:'Album', genero:'Electrónica', subgenero:'Dance/Club', artista:'Caribou', nombre:'Suddenly', añoDeLanzamiento:'2020', stock:12},
-    {id:7, tipo:'Album', genero:'Reggae', subgenero:'', artista:'Bob Marley & The Wailers', nombre:'Uprising', añoDeLanzamiento:'1980', stock:15},
-    {id:8, tipo:'Album', genero:'Jazz', subgenero:'Modal', artista:'Miles Davis', nombre:'Kind of Blue', añoDeLanzamiento:'1959', stock:50},
-    {id:9, tipo:'Album', genero:'Cláscia', subgenero:'Post moderna/ Minimalista', artista:'Philip Glass', nombre:'Glassworks', añoDeLanzamiento:'1981', stock:14},
-    {id:10, tipo:'Album', genero:'Jazz', subgenero:'Smooth', artista:'Bill Evans', nombre:'You Must Believe In Spring', añoDeLanzamiento:'1981', stock:17},
-    {id:11, tipo:'Album', genero:'Electrónica', subgenero:'Dance/Experimental', artista:'Mark Fell', nombre:'The Neurobiology of Moral Decision Making', añoDeLanzamiento:'2015', stock:2},
-
+    {id:1, tipo:'Album', genero:'Rock', subgenero:'Indie/Independiente/Alternativo', artista:'King Krule', nombre:'Flimsier', añoDeLanzamiento:'2023', stock:15},
+    {id:2, tipo:'EP', genero:'Electrónica', subgenero:'IDM/Dance', artista:'Aphex Twin', nombre:'Blackbox Life Recorder 21f / In a Room7 F760', añoDeLanzamiento:'2023', stock:11},
+    {id:3, tipo:'Album', genero:'Rock', subgenero:'Math Rock', artista:'Hella', nombre:'Hold Your Horse Is', añoDeLanzamiento:'2002', stock:10},
+    {id:4, tipo:'Album', genero:'Rock', subgenero:' Psicodélico/Experimental', artista:'The Beatles', nombre:'Sgt. Pepper´s Lonely Hearts Cub Band', añoDeLanzamiento:'1967', stock:56},
+    {id:5, tipo:'Album', genero:'Pop/Experimental', subgenero:'Pop/Reguetón/Alternativo/Experimental/Avant-garde', artista:'Rosalía', nombre:'Motomami', añoDeLanzamiento:'2022', stock:124},
+    {id:6, tipo:'Album', genero:'Experimental/Pop', subgenero:'Latin/Folk/Electrónica/Pop', artista:'Helado Negro', nombre:'Far in', añoDeLanzamiento:'2021', stock:22},
+    {id:7, tipo:'Album', genero:'Electrónica', subgenero:'Dance/Club', artista:'Caribou', nombre:'Suddenly', añoDeLanzamiento:'2020', stock:12},
+    {id:8, tipo:'Album', genero:'Reggae', subgenero:'', artista:'Bob Marley & The Wailers', nombre:'Uprising', añoDeLanzamiento:'1980', stock:15},
+    {id:9, tipo:'Album', genero:'Jazz', subgenero:'Modal', artista:'Miles Davis', nombre:'Kind of Blue', añoDeLanzamiento:'1959', stock:50},
+    {id:10, tipo:'Album', genero:'Clásico', subgenero:'Post moderna/ Minimalista', artista:'Philip Glass', nombre:'Glassworks', añoDeLanzamiento:'1981', stock:14},
+    {id:11, tipo:'Album', genero:'Jazz', subgenero:'Smooth', artista:'Bill Evans', nombre:'You Must Believe In Spring', añoDeLanzamiento:'1981', stock:17},
+    {id:12, tipo:'Album', genero:'Electrónica', subgenero:'Dance/Experimental', artista:'Mark Fell', nombre:'The Neurobiology of Moral Decision Making', añoDeLanzamiento:'2015', stock:2}
 ]
 
 class Eleccion {
@@ -201,99 +200,117 @@ class Eleccion {
         this.coleccion = coleccion;
     }
 
-    addAlbum (lanzamiento){
+    agregarLanzamiento (lanzamiento){
         let id = this.coleccion.lenght + 1;
         lanzamiento.id = id;
-
-        this.coleccion.push (lanzamiento);
+        
+        this.coleccion.push(lanzamiento);
     }
-    // GetAlbumById(id){
-    //     const album = this.coleccion.find (item => item.id === id);
-    //     return album ? album : "No contamos con el ejemplar solicitado";
-    // }
 
-    // GetAlbumByGenero (genero){
-    //     const album = this.coleccion.filter (item =>item.genero.toLowerCase().includes(genero.toLowerCase()));
-    //     return album;
 
-    // }
+    getAlbumById(id){
+        const album = this.coleccion.find (item => item.id === id);
+        return album ? album : "No contamos con el ejemplar solicitado";
+    }
+
+
+    getAlbumByGenero (genero){
+        const album = this.coleccion.filter (item => item.genero.normalize("NFD").replace(/[\u0300-\u036f]/g, '').toLowerCase().includes(genero.normalize("NFD").replace(/[\u0300-\u036f]/g, '').toLowerCase()));
+        return album;
+    }
+
+
+mostrarLanzamientos(){
+    console.table(this.coleccion);
+    // let = mensaje = '';
+
+    // this.coleccion.forEach(lanzamiento => {
+    //     mensaje += `Nombre ${lanzamiento.artista} | Album : ${lanzamiento.nombre} /n`;
+    // });
+    //     alert(mensaje)
+    }
 }
 
-const seleccion = new Eleccion (coleccion);
-// const articulo = seleccion.GetAlbumById (parseInt(prompt('Buscar por id')));
-// const busqueda = seleccion.GetAlbumByGenero (prompt('Buscar albúm por genero'));
 
-// console.table(articulo);
+const seleccion = new Eleccion (coleccion);
+const lanzamientos = seleccion.getAlbumById (parseInt(prompt('Buscar por id')));
+
+
+const busqueda = seleccion.getAlbumByGenero (prompt('Buscar albúm por genero'));
+
+// console.table(lanzamiento);
 // console.table(busqueda);
 
 
 let lanzamientoUsuario = confirm('Desea subir algo?');
 
 
-if (lanzamientoUsuario == true){ 
+if (lanzamientoUsuario === true){ 
     do{
     tipox = prompt('Indicar formato');
     generox = prompt('Indicar genero');
     subgenerox = prompt('Indicar subgenero');
     artistax = prompt('Indicar nombre del artista');
     nombrex = prompt('Indicar nombre del lanzamiento');
-    añoDeLanzamientox = parseInt(prompt('Indicar año de lanzamiento'));
-    stockx = prompt('Indicar stock disponible para venta al público');
+    añoDeLanzamientox = parseFloat(prompt('Indicar año de lanzamiento'));
+    stockx = parseFloat(prompt('Indicar stock disponible para venta al público'));
 
-    seleccion.addAlbum ({tipo:tipox, genero: generox, subgenero: subgenerox, artista: artistax, nombre:nombrex, añoDeLanzamiento: añoDeLanzamientox, stock:stockx});
+    seleccion.agregarLanzamiento ({tipo:tipox, genero: generox, subgenero: subgenerox, artista: artistax, nombre:nombrex, añoDeLanzamiento: añoDeLanzamientox, stock:stockx});
+
+    seleccion.mostrarLanzamientos();
 
 
-} while  (confirm("¿Desea publicar mas contenido?") == true);
+} while  (confirm("¿Desea publicar mas contenido?") === true);
 } else {
     alert('Cuando quieras compartir tu música con la comunidad no dudes en utilizar nuestra plataforma');
 }
 
-const getColeccion = async () => {
+// const getColeccion = async () => {
 
-    try{
-    const endPoint = 'data.json';
-    const resp = await fetch(endPoint);
-    const json = await resp.json();
+//     try{
+//     const endPoint = 'data.json';
+//     const resp = await fetch(endPoint);
+//     const json = await resp.json();
 
-    const {coleccion, genero} = json;
+//     const {coleccion, genero} = json;
 
-    coleccion_lista = coleccion;
+//     coleccion_lista = coleccion;
 
-    console.table(genero);
+//     console.table(genero);
     // renderColeccion(genero);
     // renderGenero(genero);
 
-    }catch{
-    alert('Ocurrió un error en la carga de los productos, por favor intentar mas tarde')
-    }
-}
+//     }catch{
+//     alert('Ocurrió un error en la carga de los productos, por favor intentar mas tarde')
+//     }
+// }
 
-getColeccion();
+// getColeccion();
 
 
 // LO SIGUIENTE VA ARRIBA //
-let coleccion_lista = [];
+// let coleccion_lista = [];
 
 
-inputBusqueda.addEventListener ('input', (evento) => {
-    const busqueda = evento.target.value;  //inputSearch.value
-    const nuevaLista = coleccion_lista.filter( (coleccion) => coleccion.nombre.toLowerCase().includes(busqueda.toLowerCase()));;
-    renderColeccion(nuevaLista)
-})
+// inputBusqueda.addEventListener ('input', (evento) => {
+//     const busqueda = evento.target.value;  //inputSearch.value
+//     const nuevaLista = coleccion_lista.filter( (coleccion) => coleccion.nombre.toLowerCase().includes(busqueda.toLowerCase()));;
+//     renderColeccion(nuevaLista)
+// })
 
-selectGenero.addEventListener ('change',(e)=>{
-    const id_genero = selectGenero.value;
-    console.log ('Genero', id_genero);
+// selectGenero.addEventListener ('change',(e)=>{
+//     const id_genero = selectGenero.value;
+//     console.log ('Genero', id_genero);
 
-    filtroGenero(id_genero);
-})
+//     filtroGenero(id_genero);
+// })
 
 
-const filtroGenero = (id_genero) =>{
-    const nuevaLista = coleccion_lista.filtro ( (coleccion)=> coleccion.id_genero == id_genero && coleccion.nombre == nombre);
+// const filtroGenero = (id_genero) =>{
+//     const nuevaLista = coleccion_lista.filtro ( (coleccion)=> coleccion.id_genero == id_genero && coleccion.nombre == nombre);
 
-    renderColeccion(nuevaLista);
-}
+//     renderColeccion(nuevaLista);
+// }
 
 // const renderColeccion = (lista) => {
 //     listaColeccion.innerHTML = '';
@@ -304,24 +321,24 @@ const filtroGenero = (id_genero) =>{
 // }
 
 
-const renderCarrito = (lista) => {
-    modalListaColeccion.innerHTML ='';
-    lista.forEach (coleccion =>{
-        modalListaColeccion.innerHTML += //html
-    `<tr>
-        <td>${coleccion.tipo}</td>
-        <td>${coleccion.nombre}</td>
-        <td>${coleccion.añoDeLanzamiento}</td>
-        <td>${coleccion.stock}</td>
-        </tr>`
-});
-}
+// const renderCarrito = (lista) => {
+//     modalListaColeccion.innerHTML ='';
+//     lista.forEach (coleccion =>{
+//         modalListaColeccion.innerHTML += //html
+//     `<tr>
+//         <td>${coleccion.tipo}</td>
+//         <td>${coleccion.nombre}</td>
+//         <td>${coleccion.añoDeLanzamiento}</td>
+//         <td>${coleccion.stock}</td>
+//         </tr>`
+// });
+// }
 
 
-const renderGenero = (lista) => {
-    selectGenero.innerHTML = '';
-    lista.forEach(genero => {
-        selectGenero.innerHTML += //html
-        `<option value="${genero.id_genero}">${genero.nombre}</option>`
-    });
-}
+// const renderGenero = (lista) => {
+//     selectGenero.innerHTML = '';
+//     lista.forEach(genero => {
+//         selectGenero.innerHTML += //html
+//         `<option value="${genero.id_genero}">${genero.nombre}</option>`
+//     });
+// }
