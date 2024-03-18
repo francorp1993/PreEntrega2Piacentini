@@ -11,19 +11,20 @@ class carrito {
             this.carrito[index].units += 1;
         }
 
-        localStorage.setItem ('cart', JSON.stringify (this.carrito));
+        localStorage.setItem ('carrito', JSON.stringify (this.carrito));
     }
 
-    getColeccion (){
+    traerColeccion (){
         return this.carrito
     }
 
-    getCuenta (){
+    traerCuenta (){
         const cuenta = this.carrito.reduce ( (cant, coleccion) => { return cant + coleccion.units }, 0)
         return cuenta;
     } 
 
-    // getSuma (){
-    //     return this.carrito.reduce ( (acum, product) => { return acum + (coleccion.units * coleccion.precio) },0 )
-    // }       SI LE PONGO PRECIO A LOS LANZAMIENTOS  // PUEDO CON ESTO RESTAR EN VEZ DE SUMAR SI QUIERO
-} 
+    traerSuma (){
+        return this.carrito.reduce ( (acum, lanzamiento) => { return acum + (coleccion.stock * coleccion.stock) },0 )
+    }      
+    //  SI LE PONGO PRECIO A LOS LANZAMIENTOS  // PUEDO CON ESTO RESTAR EN VEZ DE SUMAR SI QUIERO
+}
