@@ -1,8 +1,8 @@
 const modal = new bootstrap.Modal('#modalCarrito', {});
 const btnModalCarrito = document.querySelector('#btnModalCarrito');
 const carritoCuenta = document.querySelector('#carritoCuenta');
-const caritoSuma = document.querySelector('#carritoSuma');
-const inputSearch = document.querySelector('#inputSearch');
+const carritoSuma = document.querySelector('#carritoSuma');
+const inputBusqueda = document.querySelector('#inputBusqueda');
 const listaColeccion = document.querySelector('#listaColeccion');
 const seleccionarGenero = document.querySelector('#seleccionarGenero');
 const modalListaColeccion = document.querySelector('#modalListaColeccion');
@@ -213,8 +213,7 @@ const agregarAlCarrito = ( e )=> {
 }
 
 
-
-const renderCarrito = (coleccion) => {
+const renderCarrito = (lista) => {
     modalListaColeccion.innerHTML = '';
     list.forEach( lanzamiento => {
         modalListaColeccion.innerHTML += // html
@@ -223,21 +222,16 @@ const renderCarrito = (coleccion) => {
                 <td> ${lanzamiento.artista}</td>
                 <td>$${lanzamiento.nombre}</td>
                 <td>$${lanzamiento.stock}</td>
-
             </tr>`
     });
 }
-renderLanzamientos( coleccion);
-
-
-
 
 
 const renderGenero = ( coleccion) => {
     seleccionarGenero.innerHTML = '';
     list.forEach( genero => {
         seleccionarGenero.innerHTML += // html
-        <option value="${genero.id_genero}"> ${genero.name}</option>
+        `<option value="${genero.id_genero}"> ${genero.name}</option>`
     });
 }
 
@@ -250,11 +244,12 @@ const traerColeccion = async () => {
 
     const {coleccion, genero} = json;
     coleccion_lista = coleccion;
-    renderColeccion(genero);
+    renderColeccion(coleccion);
     renderGenero(genero);
+
     }catch (error){
     alert('Ocurrió un error en la carga de los productos, por favor intentar mas tarde')
-    }
+    };
     console.log (error)
 }
 

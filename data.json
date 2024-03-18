@@ -1,24 +1,24 @@
 {
     "coleccion": [
-    {"id_lanzamiento":1, "img":"imagenes/king-krule-space-heavy.png",  "tipo":"Album", "id_genero":"Rock", "subgenero":"Indie/Independiente/Alternativo", "artista":"King Krule", "nombre":"Flimsier", "añoDeLanzamiento":"2023", "stock":15},
-    {"id_lanzamiento":2, "img":"imagenes/aphex-twin-album.webp",  "tipo":"EP", "id_genero":"Electrónica", "subgenero":"IDM/Dance", "artista":"Aphex Twin", "nombre":"Blackbox Life Recorder 21f / In a Room7 F760", "añoDeLanzamiento":"2023", "stock":11},
-    {"id_lanzamiento":3, "img":"imagenes/hella-album.webp",  "tipo":"Album", "id_genero":"Rock", "subgenero":"Math Rock", "artista":"Hella", "nombre":"Hold Your Horse Is", "añoDeLanzamiento":"2002", "stock":10},
-    {"id_lanzamiento":4, "img":"imagenes/the-beatles-sgt.-peppers-lonely-hearts-club-band.jpeg",  "tipo":"Album", "id_genero":"Rock", "subgenero":" Psicodélico/Experimental", "artista":"The Beatles", "nombre":"Sgt. Pepper´s Lonely Hearts Cub Band", "añoDeLanzamiento":"1967", "stock":56},
-    {"id_lanzamiento":5, "img":"imagenes/rosalia.jpg",  "tipo":"Album", "id_genero":"Pop/Experimental", "subgenero":"Pop/Reguetón/Alternativo/Experimental/Avant-garde", "artista":"Rosalía", "nombre":"Motomami", "añoDeLanzamiento":"2022", "stock":124},
-    {"id_lanzamiento":6, "img":"imagenes/helado-negro.jpeg",  "tipo":"Album", "id_genero":"Pop/Experimental", "subgenero":"Latin/Folk/Electrónica/Pop", "artista":"Helado Negro", "nombre":"Far in", "añoDeLanzamiento":"2021", "stock":22},
-    {"id_lanzamiento":7, "img":"imagenes/caribou.jpg",  "tipo":"Album", "id_genero":"Electrónica", "subgenero":"Dance/Club", "artista":"Caribou", "nombre":"Suddenly", "añoDeLanzamiento":"2020", "stock":12},
-    {"id_lanzamiento":8, "img":"imagenes/Bob-Marley-Uprising-640x635.jpeg",  "tipo":"Album", "id_genero":"Reggae", "subgenero":"-", "artista":"Bob Marley & The Wailers", "nombre":"Uprising", "añoDeLanzamiento":"1980", "stock":15},
-    {"id_lanzamiento":9, "img":"imagenes/kind-of-blue.jpeg",  "tipo":"Album", "id_genero":"Jazz", "subgenero":"Modal", "artista":"Miles Davis", "nombre":"Kind of Blue", "añoDeLanzamiento":"1959", "stock":50},
-    {"id_lanzamiento":10, "img":"imagenes/glassworks.jpeg",  "tipo":"Album", "id_genero":"Clásica", "subgenero":"Post moderna/ Minimalista", "artista":"Philip Glass", "nombre":"Glassworks", "añoDeLanzamiento":"1981", "stock":14},
-    {"id_lanzamiento":11,"img":"imagenes/You_Must_Believe_in_Spring_-_Bill_Evans.jpeg",  "tipo":"Album", "id_genero":"Jazz", "subgenero":"Smooth", "artista":"Bill Evans", "nombre":"You Must Believe In Spring", "añoDeLanzamiento":"1981", "stock":17},
-    {"id_lanzamiento":12, "img":"imagenes/markfell.jpeg",  "tipo":"Album", "id_genero":"Electrónica", "subgenero":"Dance/Experimental", "artista":"Mark Fell", "nombre":"The Neurobiology of Moral Decision Making", "añoDeLanzamiento":"2015", "stock":2}
+    {"nombre":"Flimsier","img":"imagenes/king-krule-space-heavy.png", "sotck": 20,  "tipo":"Album", "id_genero":"Rock", "subgenero":"Indie/Independiente/Alternativo", "artista":"King Krule", "añoDeLanzamiento":"2023","id_lanzamiento":1},
+    {"nombre":"Blackbox Life Recorder 21f / In a Room7 F760","img":"imagenes/aphex-twin-album.webp", "sotck": 20,  "tipo":"EP", "id_genero":"Electrónica", "subgenero":"IDM/Dance", "artista":"Aphex Twin", "añoDeLanzamiento":"2023","id_lanzamiento":2},
+    {"nombre":"Hold Your Horse Is","img":"imagenes/hella-album.webp", "sotck": 10,  "tipo":"Album", "id_genero":"Rock", "subgenero":"Math Rock", "artista":"Hella", "añoDeLanzamiento":"2002","id_lanzamiento":3},
+    {"nombre":"Sgt. Pepper´s Lonely Hearts Cub Band","img":"imagenes/the-beatles-sgt.-peppers-lonely-hearts-club-band.jpeg", "sotck": 25,  "tipo":"Album", "id_genero":"Rock", "subgenero":" Psicodélico/Experimental", "artista":"The Beatles", "añoDeLanzamiento":"1967","id_lanzamiento":4},
+    {"nombre":"Motomami","img":"imagenes/rosalia.jpg", "sotck": 240,  "tipo":"Album", "id_genero":"Pop/Experimental", "subgenero":"Pop/Reguetón/Alternativo/Experimental/Avant-garde", "artista":"Rosalía", "añoDeLanzamiento":"2022","id_lanzamiento":5},
+    {"nombre":"Far in","img":"imagenes/helado-negro.jpeg", "sotck": 230,  "tipo":"Album", "id_genero":"Pop/Experimental", "subgenero":"Latin/Folk/Electrónica/Pop", "artista":"Helado Negro", "añoDeLanzamiento":"2021","id_lanzamiento":6},
+    {"nombre":"Suddenly","img":"imagenes/caribou.jpg", "sotck": 10,  "tipo":"Album", "id_genero":"Electrónica", "subgenero":"Dance/Club", "artista":"Caribou", "añoDeLanzamiento":"2020", "stock":12,"id_lanzamiento":7},
+    {"nombre":"Uprising","img":"imagenes/Bob-Marley-Uprising-640x635.jpeg", "sotck": 34,  "tipo":"Album", "id_genero":"Reggae", "subgenero":"-", "artista":"Bob Marley & The Wailers", "añoDeLanzamiento":"1980","id_lanzamiento":8},
+    {"nombre":"Kind of Blue","img":"imagenes/kind-of-blue.jpeg", "sotck": 78,  "tipo":"Album", "id_genero":"Jazz", "subgenero":"Modal", "artista":"Miles Davis", "añoDeLanzamiento":"1959","id_lanzamiento":9},
+    {"nombre":"Glassworks","img":"imagenes/glassworks.jpeg", "sotck": 12,  "tipo":"Album", "id_genero":"Clásica", "subgenero":"Post moderna/ Minimalista", "artista":"Philip Glass", "añoDeLanzamiento":"1981","id_lanzamiento":1},
+    {"nombre":"You Must Believe In Spring", "img":"imagenes/You_Must_Believe_in_Spring_-_Bill_Evans.jpeg", "sotck": 15,  "tipo":"Album", "id_genero":"Jazz", "subgenero":"Smooth", "artista":"Bill Evans", "añoDeLanzamiento":"1981","id_lanzamiento":1},
+    {"nombre":"The Neurobiology of Moral Decision Making","img":"imagenes/markfell.jpeg", "sotck": 97,  "tipo":"Album", "id_genero":"Electrónica", "subgenero":"Dance/Experimental", "artista":"Mark Fell", "añoDeLanzamiento":"2015","id_lanzamiento":1}
     ],
     "genero":[
         {"id_genero":1, "nombre": "Rock"},
-        {"id_genero":1, "nombre": "Pop/Experimental"},
-        {"id_genero":1, "nombre": "Electrónica"},
-        {"id_genero":1, "nombre": "Reggae"},
-        {"id_genero":1, "nombre": "Jazz"},
-        {"id_genero":1, "nombre": "Clásica"}
+        {"id_genero":2, "nombre": "Pop/Experimental"},
+        {"id_genero":3, "nombre": "Electrónica"},
+        {"id_genero":4, "nombre": "Reggae"},
+        {"id_genero":5, "nombre": "Jazz"},
+        {"id_genero":6, "nombre": "Clásica"}
     ]
 }
