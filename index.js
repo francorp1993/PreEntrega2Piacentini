@@ -208,13 +208,13 @@ class Eleccion {
     }
 
 
-    getAlbumById(id){
+    traerAlbumPorId(id){
         const album = this.coleccion.find (item => item.id === id);
         return album ? album : "No contamos con el ejemplar solicitado";
     }
 
 
-    getAlbumByGenero (genero){
+    traerAlbumPorGenero (genero){
         const album = this.coleccion.filter (item => item.genero.normalize("NFD").replace(/[\u0300-\u036f]/g, '').toLowerCase().includes(genero.normalize("NFD").replace(/[\u0300-\u036f]/g, '').toLowerCase()));
         return album;
     }
@@ -233,10 +233,10 @@ mostrarLanzamientos(){
 
 
 const seleccion = new Eleccion (coleccion);
-const lanzamientos = seleccion.getAlbumById (parseInt(prompt('Buscar por id')));
+const lanzamientos = seleccion.traerAlbumPorId(parseInt(prompt('Buscar por id')));
 
 
-const busqueda = seleccion.getAlbumByGenero (prompt('Buscar albúm por genero'));
+const busqueda = seleccion.traerAlbumPorGenero (prompt('Buscar albúm por genero'));
 
 // console.table(lanzamiento);
 // console.table(busqueda);
@@ -265,7 +265,7 @@ if (lanzamientoUsuario === true){
     alert('Cuando quieras compartir tu música con la comunidad no dudes en utilizar nuestra plataforma');
 }
 
-// const getColeccion = async () => {
+// const traerColeccion = async () => {
 
 //     try{
 //     const endPoint = 'data.json';
@@ -285,7 +285,7 @@ if (lanzamientoUsuario === true){
 //     }
 // }
 
-// getColeccion();
+// traerColeccion();
 
 
 // LO SIGUIENTE VA ARRIBA //
@@ -293,7 +293,7 @@ if (lanzamientoUsuario === true){
 
 
 // inputBusqueda.addEventListener ('input', (evento) => {
-//     const busqueda = evento.target.value;  //inputSearch.value
+//     const busqueda = evento.target.value;  //inputSearch.value PROBAR ESTA  ULTIMA OPCION CUANDO TENGA QUE FUNCIONAR
 //     const nuevaLista = coleccion_lista.filter( (coleccion) => coleccion.nombre.toLowerCase().includes(busqueda.toLowerCase()));;
 //     renderColeccion(nuevaLista)
 // })
