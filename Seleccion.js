@@ -1,31 +1,31 @@
-class Cart {
-    constructor( list = [] ){
-        this.cart = list;
+class Carro {
+    constructor( lista = [] ){
+        this.carro = lista;
     }
 
-    addToCart( {id, name, img, price} ){
+    addToCarro( {id, name, img, price} ){
         // Busco si existe el producto
-        const index = this.cart.findIndex(  product => product.id == id );
+        const index = this.carro.findIndex(  product => product.id == id );
         if( index == -1){
-            this.cart.push( {id, name, price, units: 1} );
+            this.carro.push( {id, name, price, units: 1} );
         } else {
             // Ya esta en el carrito entonces incremento la cantidad'
-            this.cart[index].units += 1;
+            this.carro[index].units += 1;
         }
 
-        localStorage.setItem('cart', JSON.stringify(this.cart));
+        localStorage.setItem('carro', JSON.stringify(this.carro));
     }
 
     getLanzamientos(){
-        return this.cart;
+        return this.carro;
     }
 
-    getCount(){
-        const count = this.cart.reduce(  (cant, product) => {  return cant + product.units   }, 0  )
+    getCuenta(){
+        const count = this.carro.reduce(  (cantidad, lanzamiento) => {  return cantidad + lanzamiento.units   }, 0  )
         return count;
     }
 
-    getSum(){
-        return this.cart.reduce(  (acum, product) => {  return acum + (product.units * product.price)  }, 0  )
+    getSuma(){
+        return this.carro.reduce(  (acumulado, lanzamiento) => {  return acumulado + (lanzamiento.units * lanzamiento.price)  }, 0  )
     }
 }

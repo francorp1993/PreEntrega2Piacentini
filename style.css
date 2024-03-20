@@ -1,13 +1,29 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Nabla&display=swap');
+
 
 *{
     margin: 0;
     font-family:Arial, Helvetica, sans-serif;
+    
 }
 
 
 
-h1, h2 {
+
+h1{
+    color: aliceblue;
+    font-size: 45px;
+    font-family: "Nabla", system-ui;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    font-variation-settings:
+    "EDPT" 100,
+    "EHLT" 12;
+}
+
+h2 {
     color: aliceblue;
     font-size: 40px;
     font-family: "Madimi One", sans-serif;
@@ -52,7 +68,7 @@ header nav {
     height: 14vh;
     position: sticky;
     background: rgb(57, 100, 255);
-    background: linear-gradient(90deg, rgba(29,79,253,0.9472163865546218) 10%, rgba(253,29,225,0.896796218487395) 30%, rgba(253, 223, 29, 0.582) 50%, rgba(253,29,225,0.896796218487395) 70%, rgba(29,79,253,0.9472163865546218) 90%);
+    background: linear-gradient(90deg, rgba(29,79,253,0.9472163865546218) 10%, rgb(241, 9, 210) 35%, rgba(255, 176, 242, 0.993) 50%, rgb(235, 9, 205) 65%, rgba(29,79,253,0.9472163865546218) 90%);
 }
 
 header nav a {
@@ -105,7 +121,7 @@ footer {
     height: 35px;
 }
 
-.btnAddCart{
+.btnAddCarro{
 
     background: rgb(255,255,255);
     background: radial-gradient(circle, rgba(255,255,255,0.36458333333333337) 0%, rgba(255,255,255,0.6446953781512605) 30%, rgba(255,255,255,0.7371323529411764) 50%, rgba(255,255,255,0.9051995798319328) 100%);

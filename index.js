@@ -1,7 +1,7 @@
 const modal = new bootstrap.Modal('#modalCarrito', {});
 const btnModalCarrito = document.querySelector('#btnModalCarrito');
-const cartCount = document.querySelector('#cartCount');
-const cartSum = document.querySelector('#cartSum');
+const carroCuenta = document.querySelector('#carroCuenta');
+const carroSeleccion = document.querySelector('#carroSeleccion');
 const inputSearch = document.querySelector('#inputSearch');
 const listaLanzamientos = document.querySelector('#listaLanzamientos');
 const selectGenero = document.querySelector('#selectGenero');
@@ -12,17 +12,17 @@ const btnOrder = document.querySelector('#btnOrder');
 
 let lanzamientos_lista = [];
 
-const listCart = JSON.parse( localStorage.getItem('cart') ) || [];
-const cart = new Cart(listCart);
+const listaCarro = JSON.parse( localStorage.getItem('carro') ) || [];
+const carro = new Carro(listaCarro);
 
-cartCount.innerText = cart.getCount();
+carroCuenta.innerText = carro.getCuenta();
 
 
 btnModalCarrito.addEventListener('click', function(){
-    const lista = cart.getLanzamientos();
-    cartSum.innerText = cart.getSum();
+    const lista = carro.getLanzamientos();
+    carroSeleccion.innerText = carro.getSuma();
 
-    redenCart( lista );
+    renderCarro( lista );
 
     modal.show();
 })
@@ -42,13 +42,13 @@ btnSave.addEventListener('click', ()=> {
 
     modal.hide();
 
-    localStorage.removeItem('cart');
+    localStorage.removeItem('carro');
 })
 
 btnClose.addEventListener('click', ()=> {
     modal.hide();
 
-    localStorage.removeItem('cart');
+    localStorage.removeItem('carro');
 })
 
 
@@ -103,7 +103,7 @@ const renderLanzamientos = (lista) => {
                     <img class="img-fluid" src="${lanzamiento.img}" alt="${lanzamiento.artista}">
                     <h4 class="text-center">${lanzamiento.name} </h4>
                     <h5 class="text-center">$${lanzamiento.price} </h5>
-                    <button id="${lanzamiento.id_lanzamiento}" type="button" class="btn btnAddCart">
+                    <button id="${lanzamiento.id_lanzamiento}" type="button" class="btn btnAddCarro">
                         <i class="fa-solid fa-cart-plus"></i>Agregar
                     </button>
                 </div>
@@ -111,17 +111,17 @@ const renderLanzamientos = (lista) => {
     });
 
 
-    const btns = document.querySelectorAll('.btnAddCart');
+    const btns = document.querySelectorAll('.btnAddCarro');
     btns.forEach(btn => {
-        btn.addEventListener('click', addToCart);
+        btn.addEventListener('click', addToCarro);
     });
 }
 
-const addToCart = ( e )=> {
-    const id = e.target.id_lanzamiento;
-    const lanzamiento = lanzamientos_lista.find( item => item.id == id );
-    cart.addToCart( lanzamiento);
-    cartCount.innerText = cart.getCount();
+const addToCarro = ( e )=> {
+    const id = e.target.id;
+    const lanzamiento = lanzamientos_lista.find( item => item.id_lanzamiento == id );
+    carro.addToCarro( lanzamiento);
+    carroCuenta.innerText = carro.getCuenta();
     
     Toastify({
         close: true,
@@ -135,7 +135,7 @@ const addToCart = ( e )=> {
 
 }
 
-const redenCart = (lista) => {
+const renderCarro = (lista) => {
     modalDiscos.innerHTML = '';
     lista.forEach( lanzamiento => {
         modalDiscos.innerHTML += // html
