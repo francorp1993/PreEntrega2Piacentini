@@ -1,6 +1,6 @@
 {
-    "Lanzamientos": [
-        { "id_lanzamiento": 1,"tipo":"Album","artista":"King Krule", "name": " Flimsier", "añoDeLanzamiento":"2023", "img": "imagenes/king-krule-space-heavy.png", "price": 100, "id_genero": 1 },
+    "lanzamientos": [
+        { "id_lanzamiento": 1,"tipo":"Album","artista":"King Krule", "name": "Space Heavy", "añoDeLanzamiento":"2023", "img": "imagenes/king-krule-space-heavy.png", "price": 100, "id_genero": 1 },
         { "id_lanzamiento": 2,"tipo":"EP", "artista":"Aphex Twin","name": "Blackbox Life Recorder 21f / In a Room7 F760", "añoDeLanzamiento":"2023", "img": "imagenes/aphex-twin-album.webp", "price": 160, "id_genero": 3 },
         { "id_lanzamiento": 3,"tipo":"Album","artista":"Hella","name": "Hold Your Horse Is", "añoDeLanzamiento":"2002", "img": "imagenes/hella-album.webp", "price": 120, "id_genero": 1 },
         { "id_lanzamiento": 4,"tipo":"Album","artista":"Bill Evans","name": "You Must Believe In Spring", "añoDeLanzamiento":"1981", "img": "imagenes/You_Must_Believe_in_Spring_-_Bill_Evans.jpeg", "price": 125, "id_genero": 5 },

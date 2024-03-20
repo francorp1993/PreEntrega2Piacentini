@@ -73,7 +73,7 @@ selectGenero.addEventListener('change', (e) => {
 // KKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK 
 
 btnOrder.addEventListener('click', ()=> {
-    lanzamientos.sort(  (a, b ) => {
+    lanzamientos_lista.sort(  (a, b ) => {
         if(  a.price < b.price  ){
             return -1
         }
@@ -84,7 +84,7 @@ btnOrder.addEventListener('click', ()=> {
         return 0
     } )
 
-    renderLanzamientos(lanzamientos)
+    renderLanzamientos(lanzamientos_lista)
     btnOrder.setAttribute('disabled', true)
 })
 
