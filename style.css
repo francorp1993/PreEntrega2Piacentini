@@ -129,3 +129,23 @@ footer {
     font-size: 17px;
     font-weight: 500;
 }
+
+#btnOrdenar{
+    background: rgb(255, 255, 255) 35%;
+
+}
+#btnOrdenarA{
+    background: rgb(255, 255, 255) 35%;
+
+}
+.imagenOrdenar {
+    color: white;
+    height: 15px;
+    width: 15px;
+}
+
+.imagenOrdenarA {
+    color: white;
+    height: 15px;
+    width: 15px;
+}

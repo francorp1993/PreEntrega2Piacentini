@@ -8,7 +8,8 @@ const selectGenero = document.querySelector('#selectGenero');
 const modalDiscos = document.querySelector('#modalDiscos');
 const btnClose = document.querySelector('#btnClose');
 const btnSave = document.querySelector('#btnSave');
-const btnOrder = document.querySelector('#btnOrder');
+const btnOrdenar = document.querySelector('#btnOrdenar');
+const btnOrdenarA = document.querySelector('#btnOrdenarA');
 
 let lanzamientos_lista = [];
 
@@ -71,8 +72,23 @@ selectGenero.addEventListener('change', (e) => {
 });
 
 // KKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK 
+// btnOrder.addEventListener('click', ()=> {
+//     products.sort(  (a, b ) => {
+//         if(  a.price < b.price  ){
+//             return -1
+//         }
+//         if ( a.price > b.price){
+//             return 1
+//         }
 
-btnOrder.addEventListener('click', ()=> {
+//         return 0
+//     } )
+
+//     renderProducts(products)
+//     btnOrder.setAttribute('disabled', true)
+// })
+
+btnOrdenar.addEventListener('click', ()=> {
     lanzamientos_lista.sort(  (a, b ) => {
         if(  a.precio < b.precio  ){
             return -1
@@ -85,7 +101,21 @@ btnOrder.addEventListener('click', ()=> {
     } )
 
     renderLanzamientos(lanzamientos_lista)
-    btnOrder.setAttribute('disabled', true)
+})
+
+btnOrdenarA.addEventListener('click', ()=> {
+    lanzamientos_lista.sort(  (a, b ) => {
+        if(  a.precio < b.precio  ){
+            return 1
+        }
+        if ( a.precio > b.precio){
+            return -1
+        }
+
+        return 0
+    } )
+
+    renderLanzamientos(lanzamientos_lista)
 })
 
 const filtroGenero = ( id_genero ) => {
