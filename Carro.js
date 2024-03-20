@@ -4,11 +4,11 @@ class Carro {
     }
 
 
-    addToCarro( {id_lanzamiento, nombre, img, precio} ){
+    addToCarro( {id_lanzamiento, nombre, precio,} ){
         // Busco si existe el producto
-        const index = this.carro.findIndex(  lanzamiento => lanzamiento.id_lanzamiento== id_lanzamiento );
+        const index = this.carro.findIndex(  lanzamiento => lanzamiento.id_lanzamiento == id_lanzamiento );
         if( index == -1){
-            this.cart.push( {id_lanzamiento, nombre, precio, unidades: 1} );
+            this.carro.push( {id_lanzamiento, nombre, precio, unidades: 1} );
         } else {
             // Ya esta en el carrito entonces incremento la cantidad'
             this.carro[index].unidades += 1;
