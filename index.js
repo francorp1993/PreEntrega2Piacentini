@@ -2,7 +2,7 @@ const modal = new bootstrap.Modal('#modalCarrito', {});
 const btnModalCarrito = document.querySelector('#btnModalCarrito');
 const carroCuenta = document.querySelector('#carroCuenta');
 const carroSeleccion = document.querySelector('#carroSeleccion');
-const inputSearch = document.querySelector('#inputSearch');
+const inputBusqueda= document.querySelector('#inputBusqueda');
 const listaLanzamientos = document.querySelector('#listaLanzamientos');
 const selectGenero = document.querySelector('#selectGenero');
 const modalDiscos = document.querySelector('#modalDiscos');
@@ -56,9 +56,9 @@ btnClose.addEventListener('click', ()=> {
     modal.hide();
 })
 
-inputSearch.addEventListener('input', (evento) => {
+inputBusqueda.addEventListener('input', (evento) => {
     const busqueda = evento.target.value;
-    const nombreLista = lanzamientos_lista.filter(  (disco) => disco.name.toLowerCase().includes( busqueda.toLowerCase() ) && disco.id_genero == selectGenero.value );
+    const nombreLista = lanzamientos_lista.filter(  (disco) => disco.nombre.toLowerCase().includes( busqueda.toLowerCase() ) && disco.id_genero == selectGenero.value );
 
     renderLanzamientos(nombreLista);
 })
@@ -74,10 +74,10 @@ selectGenero.addEventListener('change', (e) => {
 
 btnOrder.addEventListener('click', ()=> {
     lanzamientos_lista.sort(  (a, b ) => {
-        if(  a.price < b.price  ){
+        if(  a.precio < b.precio  ){
             return -1
         }
-        if ( a.price > b.price){
+        if ( a.precio > b.precio){
             return 1
         }
 
@@ -101,8 +101,8 @@ const renderLanzamientos = (lista) => {
                 <div class="card-body">
                     <h3>${lanzamiento.artista}</h3>
                     <img class="img-fluid" src="${lanzamiento.img}" alt="${lanzamiento.artista}">
-                    <h4 class="text-center">${lanzamiento.name} </h4>
-                    <h5 class="text-center">$${lanzamiento.price} </h5>
+                    <h4 class="text-center">${lanzamiento.nombre} </h4>
+                    <h5 class="text-center">$${lanzamiento.precio} </h5>
                     <button id="${lanzamiento.id_lanzamiento}" type="button" class="btn btnAddCarro">
                         <i class="fa-solid fa-cart-plus"></i>Agregar
                     </button>
@@ -140,10 +140,10 @@ const renderCarro = (lista) => {
     lista.forEach( lanzamiento => {
         modalDiscos.innerHTML += // html
             `<tr>
-                <td> ${lanzamiento.name} </td>
-                <td> ${lanzamiento.units}</td>
-                <td>$${lanzamiento.price}</td>
-                <td>$${lanzamiento.price * lanzamiento.units}</td>
+                <td> ${lanzamiento.nombre} </td>
+                <td> ${lanzamiento.unidades}</td>
+                <td>$${lanzamiento.precio}</td>
+                <td>$${lanzamiento.precio * lanzamiento.unidades}</td>
             </tr>`
     });
 }
@@ -152,7 +152,7 @@ const renderGenero = ( lista) => {
     selectGenero.innerHTML = '';
     lista.forEach( genero => {
         selectGenero.innerHTML += // html
-        `<option value="${genero.id_genero}"> ${genero.name}</option>`
+        `<option value="${genero.id_genero}"> ${genero.nombre}</option>`
     });
 }
 

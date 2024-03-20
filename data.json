@@ -1,27 +1,27 @@
 {
     "lanzamientos": [
-        { "id_lanzamiento": 1,"tipo":"Album","artista":"King Krule", "name": "Space Heavy", "añoDeLanzamiento":"2023", "img": "imagenes/king-krule-space-heavy.png", "price": 100, "id_genero": 1 },
-        { "id_lanzamiento": 2,"tipo":"EP", "artista":"Aphex Twin","name": "Blackbox Life Recorder 21f / In a Room7 F760", "añoDeLanzamiento":"2023", "img": "imagenes/aphex-twin-album.webp", "price": 160, "id_genero": 3 },
-        { "id_lanzamiento": 3,"tipo":"Album","artista":"Hella","name": "Hold Your Horse Is", "añoDeLanzamiento":"2002", "img": "imagenes/hella-album.webp", "price": 120, "id_genero": 1 },
-        { "id_lanzamiento": 4,"tipo":"Album","artista":"Bill Evans","name": "You Must Believe In Spring", "añoDeLanzamiento":"1981", "img": "imagenes/You_Must_Believe_in_Spring_-_Bill_Evans.jpeg", "price": 125, "id_genero": 5 },
-        { "id_lanzamiento": 5,"tipo":"Album","artista":"Rosalía","name": "Motomami", "añoDeLanzamiento":"2022", "img": "imagenes/rosalia.jpg", "price": 140, "id_genero": 2 },
-        { "id_lanzamiento": 6,"tipo":"Album","artista":"Helado Negro","name": "Far in", "añoDeLanzamiento":"2021", "img": "imagenes/helado-negro.jpeg", "price": 100, "id_genero": 7 },
-        { "id_lanzamiento": 7,"tipo":"Album","artista":"Caribou","name": "Suddenly", "añoDeLanzamiento":"2020", "img": "imagenes/caribou.jpg", "price": 80, "id_genero": 3 },
-        { "id_lanzamiento": 8,"tipo":"Album","artista":"Bob Marley & The Wailers","name": "Uprising", "añoDeLanzamiento":"1980", "img": "imagenes/Bob-Marley-Uprising-640x635.jpeg", "price": 90, "id_genero": 4 },
-        { "id_lanzamiento": 9,"tipo":"Album","artista":"Miles Davies","name": "Kind of Blue", "añoDeLanzamiento":"1959", "img": "imagenes/kind-of-blue.jpeg", "price": 100, "id_genero": 5 },
-        { "id_lanzamiento": 10,"tipo":"Album","artista":"Philip Glass","name": "Glassworks", "añoDeLanzamiento":"1981", "img": "imagenes/glassworks.jpeg", "price": 90, "id_genero": 6 },
-        { "id_lanzamiento": 11,"tipo":"Album","artista":"Mark Fell","name": "The Neurobiology of Moral Decision Making", "añoDeLanzamiento":"2015", "img": "imagenes/markfell.jpeg", "price": 125, "id_genero": 3 },
-        { "id_lanzamiento": 12,"tipo":"Album","artista":"The Beatles","name": "Sgt. Peppers Lonely Hearts Cub Band", "añoDeLanzamiento":"1967", "img": "imagenes/the-beatles-sgt.-peppers-lonely-hearts-club-band.jpeg", "price": 300, "id_genero": 1 }
+        { "id_lanzamiento": 1,"tipo":"Album","artista":"King Krule", "nombre": "Space Heavy", "añoDeLanzamiento":"2023", "img": "imagenes/king-krule-space-heavy.png", "precio": 100, "id_genero": 1 },
+        { "id_lanzamiento": 2,"tipo":"EP", "artista":"Aphex Twin","nombre": "Blackbox Life Recorder 21f / In a Room7 F760", "añoDeLanzamiento":"2023", "img": "imagenes/aphex-twin-album.webp", "precio": 160, "id_genero": 3 },
+        { "id_lanzamiento": 3,"tipo":"Album","artista":"Hella","nombre": "Hold Your Horse Is", "añoDeLanzamiento":"2002", "img": "imagenes/hella-album.webp", "precio": 120, "id_genero": 1 },
+        { "id_lanzamiento": 4,"tipo":"Album","artista":"Bill Evans","nombre": "You Must Believe In Spring", "añoDeLanzamiento":"1981", "img": "imagenes/You_Must_Believe_in_Spring_-_Bill_Evans.jpeg", "precio": 125, "id_genero": 5 },
+        { "id_lanzamiento": 5,"tipo":"Album","artista":"Rosalía","nombre": "Motomami", "añoDeLanzamiento":"2022", "img": "imagenes/rosalia.jpg", "precio": 140, "id_genero": 2 },
+        { "id_lanzamiento": 6,"tipo":"Album","artista":"Helado Negro","nombre": "Far in", "añoDeLanzamiento":"2021", "img": "imagenes/helado-negro.jpeg", "precio": 100, "id_genero": 7 },
+        { "id_lanzamiento": 7,"tipo":"Album","artista":"Caribou","nombre": "Suddenly", "añoDeLanzamiento":"2020", "img": "imagenes/caribou.jpg", "precio": 80, "id_genero": 3 },
+        { "id_lanzamiento": 8,"tipo":"Album","artista":"Bob Marley & The Wailers","nombre": "Uprising", "añoDeLanzamiento":"1980", "img": "imagenes/Bob-Marley-Uprising-640x635.jpeg", "precio": 90, "id_genero": 4 },
+        { "id_lanzamiento": 9,"tipo":"Album","artista":"Miles Davies","nombre": "Kind of Blue", "añoDeLanzamiento":"1959", "img": "imagenes/kind-of-blue.jpeg", "precio": 100, "id_genero": 5 },
+        { "id_lanzamiento": 10,"tipo":"Album","artista":"Philip Glass","nombre": "Glassworks", "añoDeLanzamiento":"1981", "img": "imagenes/glassworks.jpeg", "precio": 90, "id_genero": 6 },
+        { "id_lanzamiento": 11,"tipo":"Album","artista":"Mark Fell","nombre": "The Neurobiology of Moral Decision Making", "añoDeLanzamiento":"2015", "img": "imagenes/markfell.jpeg", "precio": 125, "id_genero": 3 },
+        { "id_lanzamiento": 12,"tipo":"Album","artista":"The Beatles","nombre": "Sgt. Peppers Lonely Hearts Cub Band", "añoDeLanzamiento":"1967", "img": "imagenes/the-beatles-sgt.-peppers-lonely-hearts-club-band.jpeg", "precio": 300, "id_genero": 1 }
     ],
     "genero": [
-        { "id_genero": 0, "name": "Todos"},
-        { "id_genero": 1, "name": "Rock"},
-        { "id_genero": 2, "name": "Pop"},
-        { "id_genero": 3, "name": "Electronica"},
-        { "id_genero": 4, "name": "Reggae"},
-        { "id_genero": 5, "name": "Jazz"},
-        { "id_genero": 6, "name": "Clasica"},
-        { "id_genero": 7, "name": "Experimental"}
+        { "id_genero": 0, "nombre": "Todos"},
+        { "id_genero": 1, "nombre": "Rock"},
+        { "id_genero": 2, "nombre": "Pop"},
+        { "id_genero": 3, "nombre": "Electronica"},
+        { "id_genero": 4, "nombre": "Reggae"},
+        { "id_genero": 5, "nombre": "Jazz"},
+        { "id_genero": 6, "nombre": "Clasica"},
+        { "id_genero": 7, "nombre": "Experimental"}
     ]
 }
 
