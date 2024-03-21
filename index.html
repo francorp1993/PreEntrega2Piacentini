@@ -69,10 +69,11 @@
     <main  class="container mt-2">
         <div class="row">
             <div class="col-md-6">
-                <input id="inputBusqueda" type="search" class="form-control" placeholder="Buscar...">
+                <input id="inputBusqueda" type="search" class="form-control" placeholder ="Buscar por artista...">
             </div>
             <div class="col-md-4">
                 <select id="selectGenero" class="form-control">
+                    <option value="" id="Todos">Todos</option>
                 </select>
             </div>
             <div class="col-md-1">
@@ -86,6 +87,10 @@
                 </button>
             </div>
         </div>
+        <div class="btnAgregar">
+            <button id="btnModalAgregarLaznamietno"><img src="imagenes/Addbtn.png" alt="Add Estudiante"><span>Lanza Contenido Propio!</span></button>
+        </div>
+
         <div id="listaLanzamientos" class="row mt-2">
 
             
@@ -125,6 +130,39 @@
             </div>
         </div>
     </div>
+
+
+    <div id="ModalAgregar" class="modalContainer">
+        <div class="modalContent">
+            <span class="close">X</span>
+            <h2>Agregar Lanzamiento Propio</h2>
+            <div class="nuevoLanzamiento">
+                <div class="row g-3">
+                    <div class="col">
+                        <input type="text" id="modalID" placeholder="IDlanzamiento">
+                    </div>
+                    <div class="col">
+                        <input type="text" id="modalNombre" placeholder="Nombre Lanzamiento">
+                    </div>
+                </div>
+                <div class="row g-3">
+                    <div class="col">
+                        <input type="number" id="modalArtista" placeholder="Nombre Artista">
+                    </div>
+                    <div class="col">
+                        <input type="number" id="modalPrecio" placeholder="Precio">
+                    </div>
+                    <!-- <div class="col">
+                        <input type="number" id="modalParcial3" placeholder="Nota Tercer Parcial">
+                    </div> -->
+                </div>
+            </div>
+            <button id="btnAgregarLanzamiento"><span>Cargar nuevo Estudiante</span></button>
+            <p id="error" class="textoAlerta">Alguno de los campos no es válido. <br>1- Verifique que el DNI contenga 6 digitos. <br> 2- Que el nombre esté compuesto por lo menos de 3 letras. <br> 3- Que las notas esten comprendidas en el rango de 1 a 10.</p>
+        </div>
+    </div>
+
+
 
     <footer>
         <p> CODERHOUSE | JavaScript | C49845 | Franco Piacentini</p>

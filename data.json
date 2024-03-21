@@ -14,13 +14,12 @@
         { "id_lanzamiento": 12,"tipo":"Album","artista":"The Beatles","nombre": "Sgt. Peppers Lonely Hearts Cub Band", "añoDeLanzamiento":"1967", "img": "imagenes/the-beatles-sgt.-peppers-lonely-hearts-club-band.jpeg", "precio": 300, "id_genero": 1 }
     ],
     "genero": [
-        { "id_genero": 0, "nombre": "Todos"},
         { "id_genero": 1, "nombre": "Rock"},
         { "id_genero": 2, "nombre": "Pop"},
         { "id_genero": 3, "nombre": "Electronica"},
         { "id_genero": 4, "nombre": "Reggae"},
         { "id_genero": 5, "nombre": "Jazz"},
-        { "id_genero": 6, "nombre": "Clasica"},
+        { "id_genero": 6, "nombre": "Clasico"},
         { "id_genero": 7, "nombre": "Experimental"}
     ]
 }

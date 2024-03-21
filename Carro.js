@@ -4,7 +4,7 @@ class Carro {
     }
 
 
-    addToCarro( {id_lanzamiento, nombre, precio,} ){
+    agregarAlCarro( {id_lanzamiento, nombre, precio,} ){
         // Busco si existe el producto
         const index = this.carro.findIndex(  lanzamiento => lanzamiento.id_lanzamiento == id_lanzamiento );
         if( index == -1){

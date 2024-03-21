@@ -10,6 +10,8 @@ const btnClose = document.querySelector('#btnClose');
 const btnSave = document.querySelector('#btnSave');
 const btnOrdenar = document.querySelector('#btnOrdenar');
 const btnOrdenarA = document.querySelector('#btnOrdenarA');
+const OpcionTodos = document.querySelector('#Todos');
+
 
 let lanzamientos_lista = [];
 
@@ -32,7 +34,7 @@ btnSave.addEventListener('click', ()=> {
     setTimeout( () => {
         
         Swal.fire({
-            title: "Carrito de Compras",
+            title: "Discos Arg",
             text: "Compra finalizada",
             icon: "success"
         });
@@ -59,34 +61,21 @@ btnClose.addEventListener('click', ()=> {
 
 inputBusqueda.addEventListener('input', (evento) => {
     const busqueda = evento.target.value;
-    const nombreLista = lanzamientos_lista.filter(  (disco) => disco.nombre.toLowerCase().includes( busqueda.toLowerCase() ) && disco.id_genero == selectGenero.value );
-
+    const nombreLista = lanzamientos_lista.filter(  (disco) => disco.artista.toLowerCase().includes( busqueda.toLowerCase() ) && disco.id_genero == selectGenero.value );
     renderLanzamientos(nombreLista);
+
 })
 
-
+OpcionTodos.addEventListener ('click', (e) => {
+    renderLanzamientos (lanzamientos_lista);
+})
 
 selectGenero.addEventListener('change', (e) => {
     const id_genero = selectGenero.value;
     filtroGenero( id_genero )
-});
+})
 
-// KKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK 
-// btnOrder.addEventListener('click', ()=> {
-//     products.sort(  (a, b ) => {
-//         if(  a.price < b.price  ){
-//             return -1
-//         }
-//         if ( a.price > b.price){
-//             return 1
-//         }
 
-//         return 0
-//     } )
-
-//     renderProducts(products)
-//     btnOrder.setAttribute('disabled', true)
-// })
 
 btnOrdenar.addEventListener('click', ()=> {
     lanzamientos_lista.sort(  (a, b ) => {
@@ -133,9 +122,9 @@ const renderLanzamientos = (lista) => {
                     <img class="img-fluid" src="${lanzamiento.img}" alt="${lanzamiento.artista}">
                     <h4 class="text-center">${lanzamiento.nombre} </h4>
                     <h5 class="text-center">$${lanzamiento.precio} </h5>
-                    <button id="${lanzamiento.id_lanzamiento}" type="button" class="btn btnAddCarro">
+                    <buttonAL id="${lanzamiento.id_lanzamiento}" type="buttonAL" class="btn btnAddCarro">
                         <i class="fa-solid fa-cart-plus"></i>Agregar
-                    </button>
+                    </buttonAL>
                 </div>
             </div>`;
     });
@@ -143,14 +132,14 @@ const renderLanzamientos = (lista) => {
 
     const btns = document.querySelectorAll('.btnAddCarro');
     btns.forEach(btn => {
-        btn.addEventListener('click', addToCarro);
+        btn.addEventListener('click', agregarAlCarro);
     });
 }
 
-const addToCarro = ( e )=> {
+const agregarAlCarro = ( e )=> {
     const id = e.target.id;
     const lanzamiento = lanzamientos_lista.find( item => item.id_lanzamiento == id );
-    carro.addToCarro( lanzamiento);
+    carro.agregarAlCarro( lanzamiento);
     carroCuenta.innerText = carro.getCuenta();
     
     Toastify({
@@ -179,7 +168,9 @@ const renderCarro = (lista) => {
 }
 
 const renderGenero = ( lista) => {
-    selectGenero.innerHTML = '';
+    selectGenero.innerHTML = // html
+    `<option value="" id="Todos">Todos</option>`;
+    
     lista.forEach( genero => {
         selectGenero.innerHTML += // html
         `<option value="${genero.id_genero}"> ${genero.nombre}</option>`
@@ -204,7 +195,7 @@ const getLanzamientos = async () => {
             title: "Error",
             text: 'Ocurrio un error al mostrar los discos, por favor intente en unos minutos',
             icon: "error",
-            confirmButtonText: 'Aceptar'
+            confirmbuttonALText: 'Aceptar'
         });
 
         console.log(error);
@@ -214,3 +205,119 @@ const getLanzamientos = async () => {
 }
 
 getLanzamientos();
+
+
+
+
+
+
+
+class LanzamientoCreado {
+    constructor(id_lanzamiento, artista, nombre, precio) {
+        this.id = id_lanzamiento;
+        this.artista = artista;
+        this.nombre = nombre;
+        this.precio = precio;
+    }
+}
+
+const btnAgregarLanzamiento = document.querySelector('#btnAgregarLanzamiento')
+const id = document.querySelector('modalID');
+const artista = document.querySelector('modalArtista');
+const nombre = document.querySelector('modalNombre');
+const precio = document.querySelector('modalPrecio');
+const textoError = document.getElementById( 'error');
+
+
+if ( document.getElementById( 'ModalAgregar')) {
+
+    let modal = document.getElementById( 'ModalAgregar');
+    let buttonAL = document.getElementById( 'btnModalAgregarLaznamietno');
+    let span = document.getElementsByClassName( 'close')[0];
+    let body = document.getElementsByTagName( 'body')[0];
+
+    buttonAL.onclick = function () {
+        modal.style.display = 'block';
+        body.style.position = 'static';
+        body.style.height = '100%';
+        body.style.overflow = 'hidden';
+    }
+
+    span.onclick = function () {
+        modal.style.display = 'none';
+        body.style.position = 'inherit';
+        body.style.height = 'auto';
+        body.style.overflow = 'visible';
+    }
+} 
+
+btnAgregarLanzamiento.addEventListener('click', (e) => {
+    const validarID =(id) => {
+        if ( id.length===2 && !isNaN(id)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+    const validarNombre = (nombre) => {
+        return nombre.length >=3;
+    }
+    const validarArtista = (artista) => {
+        return nombre.length >=3;    
+    }
+    const validarPrecio = (precio) =>{
+        if ( !isNaN(precio)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+    if (validarID(id.value) && validarNombre(nombre.value) && validarArtista(artista.value) && validarPrecio(Number(precio.value))) {
+        let nuevoLanzamiento = new LanzamientoCreado ( id.value, nombre.value, artista.value,Number(precio.value));
+        textoError.style.display = 'none';
+        lanzamientosNuevos.push(nuevoLanzamiento);
+        localStorage.setItem("lanzamientos",JSON.stringify(lanzamientosNuevos));
+        lanzamientosNuevos = JSON.parse( localStorage.getItem( 'lanzamientos'));
+        renderLanzamientos( lanzamientosNuevos);
+// kkkkk
+        id.value = '';
+        nombre.value = '';
+        artista.value = '';
+        precio.value = '';
+
+        Toastify({
+            text: "lanzamiento agregado.",
+            duration: 2000
+            }).showToast();
+
+    } else {
+        Swal.fire({
+            title: "Error!",
+            text: "Alguno de los campos no es válido. 1- Verifique que el id contenga 2 digitos. 2- Que el nombre esté compuesto por lo menos de 3 letras.",
+            icon: "error"
+        });
+    }
+
+})
+
+
+
+
+
+
+// let estudiantes = [];
+
+// // let estudiantesGet = [];
+// fetch('../data/data.json')
+// .then(response => response.json())
+// .then(data => {
+//     estudiantes = data;
+//     JSON.parse( localStorage.getItem( 'estudiantes')) || localStorage.setItem( 'estudiantes', JSON.stringify(estudiantes));
+    
+// })
+
+
+
+//agregar los estudiantes renderizados a la lista de estudiantes existente.
+
+const nuevoLanzamiento = LanzamientoCreado;
