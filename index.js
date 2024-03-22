@@ -63,18 +63,43 @@ btnClose.addEventListener('click', () => {
 });
 
 
+// --------------------------------------------------------BUSQUEDA y SELECCIONADOR DE GENERO-----------------------------------------
 inputBusqueda.addEventListener('input', (evento) => {
-    const busqueda = evento.target.value;
-    const nombreLista = lanzamientos_lista.filter((disco) => disco.artista.toLowerCase().includes(busqueda.toLowerCase()) && disco.id_genero == selectGenero.value);
-    renderLanzamientos(nombreLista);
+    const busqueda = evento.target.value.toLowerCase();
+    const id_genero = selectGenero.value;
+
+    if (id_genero === "") {
+        const listaTodos = lanzamientos_lista.filter((lanzamiento) => 
+            lanzamiento.artista.toLowerCase().includes(busqueda) || 
+            lanzamiento.nombre.toLowerCase().includes(busqueda)
+        );
+        renderLanzamientos(listaTodos);
+    } else {
+        const nombreLista = lanzamientos_lista.filter((lanzamiento) => 
+            (lanzamiento.artista.toLowerCase().includes(busqueda) || lanzamiento.nombre.toLowerCase().includes(busqueda)) && 
+            lanzamiento.id_genero == id_genero
+        );
+        renderLanzamientos(nombreLista);
+    }
 });
-
-
 
 selectGenero.addEventListener('change', (e) => {
     const id_genero = selectGenero.value;
     filtroGenero(id_genero);
 });
+
+const filtroGenero = (id_genero) => {
+    if (id_genero === "") {
+        renderLanzamientos(lanzamientos_lista);
+    } else {
+        const nuevaLista = lanzamientos_lista.filter((lanzamiento) => lanzamiento.id_genero == id_genero);
+        renderLanzamientos(nuevaLista);
+    }
+};
+
+// --------------------------------------------------------------------------------------------------------------------------------------
+
+
 
 btnOrdenar.addEventListener('click', () => {
     lanzamientos_lista.sort((a, b) => a.precio - b.precio);
@@ -86,10 +111,7 @@ btnOrdenarA.addEventListener('click', () => {
     renderLanzamientos(lanzamientos_lista);
 });
 
-const filtroGenero = (id_genero) => {
-    const nuevaLista = lanzamientos_lista.filter((lanzamiento) => lanzamiento.id_genero == id_genero);
-    renderLanzamientos(nuevaLista);
-};
+
 
 const renderLanzamientos = (lista) => {
     listaLanzamientos.innerHTML = '';
