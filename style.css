@@ -62,12 +62,13 @@ header {
 }
 
 header nav {
-
+    display: flex;
+    justify-content: space-evenly;
     width: 100%;
     height: 14vh;
     position: sticky;
     background: rgb(57, 100, 255);
-    background: linear-gradient(90deg, rgba(29,79,253,0.9472163865546218) 10%, rgb(241, 9, 210) 35%, rgba(255, 176, 242, 0.993) 50%, rgb(235, 9, 205) 65%, rgba(29,79,253,0.9472163865546218) 90%);
+    background: linear-gradient(90deg, rgba(29,79,253,0.9472163865546218) 10%, rgb(241, 9, 210) 35%, rgba(252, 135, 232, 0.993) 50%, rgb(235, 9, 205) 65%, rgba(29,79,253,0.9472163865546218) 90%);
 }
 
 header nav a {
@@ -120,14 +121,18 @@ footer {
     height: 35px;
 }
 
-.btnAddCarro{
+#btnModalCarrito{
 
-    background: rgb(255,255,255);
-    background: radial-gradient(circle, rgba(255,255,255,0.36458333333333337) 0%, rgba(255,255,255,0.6446953781512605) 30%, rgba(255,255,255,0.7371323529411764) 50%, rgba(255,255,255,0.9051995798319328) 100%);
+    background: rgb(255,255,255);;
     color: black;
     font-size: 17px;
     font-weight: 500;
 }
+#btnModalCarrito:hover{
+    background-color: #ff5cd6;
+    border-color: #ffffff;
+}
+
 
 #btnOrdenar{
     background: rgb(255, 255, 255) 35%;
@@ -149,14 +154,64 @@ footer {
     width: 15px;
 }
 
-.no-results {
-    font-size: 15px;
-    color: red;
-    text-align: center;
-    display: none;
-}
-/* 
-.btnAbtnAgregar{
 
-} */
-/* Estilo personalizado para SweetAlert */
+.card {
+    margin-bottom: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    border-radius: 0.25rem;
+}
+
+
+#btnMiLanzamiento {
+    margin-right: 220px;
+    background-color: rgb(255, 255, 255);  
+    border-color: black;  
+    color: black;
+    font-size: 17px;
+    font-weight: 500;
+}
+
+#btnMiLanzamiento:hover {
+    border-color: #ffffff;
+    color: rgb(255, 255, 255);
+    background-color:hsla(0, 0%, 100%, 0.459);
+}
+
+#formAlbum {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#formAlbum label {
+    font-weight: bold;
+}
+
+#formAlbum input[type="text"],
+#formAlbum input[type="number"] {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#formAlbum input[type="text"]:focus,
+#formAlbum input[type="number"]:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+#formAlbum input[type="submit"] {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#formAlbum input[type="submit"]:hover {
+    background-color: #0056b3;
+}

@@ -2,15 +2,19 @@ const modal = new bootstrap.Modal('#modalCarrito', {});
 const btnModalCarrito = document.querySelector('#btnModalCarrito');
 const carroCuenta = document.querySelector('#carroCuenta');
 const carroSeleccion = document.querySelector('#carroSeleccion');
-const inputBusqueda = document.querySelector('#inputBusqueda');
-const listaLanzamientos = document.querySelector('#listaLanzamientos');
-const selectGenero = document.querySelector('#selectGenero');
 const modalDiscos = document.querySelector('#modalDiscos');
+
+const inputBusqueda = document.querySelector('#inputBusqueda');
+const selectGenero = document.querySelector('#selectGenero');
+
+const listaLanzamientos = document.querySelector('#listaLanzamientos');
+
 const btnClose = document.querySelector('#btnClose');
 const btnComprar = document.querySelector('#btnComprar');
 const btnOrdenar = document.querySelector('#btnOrdenar');
 const btnOrdenarA = document.querySelector('#btnOrdenarA');
-const OpcionTodos = document.querySelector('#Todos');
+
+const btnMiLanzamiento = document.querySelector('#btnMiLanzamiento');
 
 let lanzamientos_lista = [];
 
@@ -61,6 +65,41 @@ btnClose.addEventListener('click', () => {
         }
     });
 });
+
+// -------------------------------------------------------Agregar Lanzamiento y Renderizarlo------------------------------------------
+
+
+// Función para mostrar el formulario en un Sweet Alert
+const mostrarFormulario = (titulo, contenidoHTML) => {
+    Swal.fire({
+        title: titulo,
+        html: contenidoHTML,
+        showCancelButton: true,
+        confirmButtonText: 'Guardar',
+        cancelButtonText: 'Cancelar',
+        showLoaderOnConfirm: true,
+        preConfirm: () => {
+            // Aquí puedes agregar la lógica para guardar los datos del formulario
+            // y realizar cualquier acción necesaria
+        }
+    });
+};
+
+// Event listeners para cada selector
+btnMiLanzamiento.addEventListener('click', () => {
+    const contenidoHTML = `
+        <form id="formAlbum">
+            <label for="nombreAlbum">Album:</label>
+            <input type="text" id="nombreAlbum" name="nombreAlbum" required>
+            <label for="artistaAlbum">Artista:</label>
+            <input type="text" id="artistaAlbum" name="artistaAlbum" required>
+            <label for="precioAlbum">Precio:</label>
+            <input type="number" id="precioAlbum" name="precioAlbum" required>
+        </form>
+    `;
+    mostrarFormulario('Nuevo Álbum', contenidoHTML);
+});
+
 
 
 // --------------------------------------------------------BUSQUEDA y SELECCIONADOR DE GENERO-----------------------------------------
@@ -195,120 +234,3 @@ const getLanzamientos = async () => {
 };
 
 getLanzamientos();
-
-
-
-
-
-
-
-
-// class LanzamientoCreado {
-//     constructor(id_lanzamiento, artista, nombre, precio) {
-//         this.id = id_lanzamiento;
-//         this.artista = artista;
-//         this.nombre = nombre;
-//         this.precio = precio;
-//     }
-// }
-
-// const btnAgregarLanzamiento = document.querySelector('#btnAgregarLanzamiento')
-// const id = document.querySelector('modalID');
-// const artista = document.querySelector('modalArtista');
-// const nombre = document.querySelector('modalNombre');
-// const precio = document.querySelector('modalPrecio');
-// const textoError = document.getElementById( 'error');
-
-
-// if ( document.getElementById( 'ModalAgregar')) {
-
-//     let modal = document.getElementById( 'ModalAgregar');
-//     let buttonAL = document.getElementById( 'btnModalAgregarLaznamietno');
-//     let span = document.getElementsByClassName( 'close')[0];
-//     let body = document.getElementsByTagName( 'body')[0];
-
-//     buttonAL.onclick = function () {
-//         modal.style.display = 'block';
-//         body.style.position = 'static';
-//         body.style.height = '100%';
-//         body.style.overflow = 'hidden';
-//     }
-
-//     span.onclick = function () {
-//         modal.style.display = 'none';
-//         body.style.position = 'inherit';
-//         body.style.height = 'auto';
-//         body.style.overflow = 'visible';
-//     }
-// } 
-
-// btnAgregarLanzamiento.addEventListener('click', (e) => {
-//     const validarID =(id) => {
-//         if ( id.length===2 && !isNaN(id)) {
-//             return true;
-//         } else {
-//             return false;
-//         }
-//     }
-//     const validarNombre = (nombre) => {
-//         return nombre.length >=3;
-//     }
-//     const validarArtista = (artista) => {
-//         return nombre.length >=3;    
-//     }
-//     const validarPrecio = (precio) =>{
-//         if ( !isNaN(precio)) {
-//             return true;
-//         } else {
-//             return false;
-//         }
-//     }
-//     if (validarID(id.value) && validarNombre(nombre.value) && validarArtista(artista.value) && validarPrecio(Number(precio.value))) {
-//         let nuevoLanzamiento = new LanzamientoCreado ( id.value, nombre.value, artista.value,Number(precio.value));
-//         textoError.style.display = 'none';
-//         lanzamientosNuevos.push(nuevoLanzamiento);
-//         localStorage.setItem("lanzamientos",JSON.stringify(lanzamientosNuevos));
-//         lanzamientosNuevos = JSON.parse( localStorage.getItem( 'lanzamientos'));
-//         renderLanzamientos( lanzamientosNuevos);
-// // kkkkk
-//         id.value = '';
-//         nombre.value = '';
-//         artista.value = '';
-//         precio.value = '';
-
-//         Toastify({
-//             text: "lanzamiento agregado.",
-//             duration: 2000
-//             }).showToast();
-
-//     } else {
-//         Swal.fire({
-//             title: "Error!",
-//             text: "Alguno de los campos no es válido. 1- Verifique que el id contenga 2 digitos. 2- Que el nombre esté compuesto por lo menos de 3 letras.",
-//             icon: "error"
-//         });
-//     }
-
-// })
-
-
-
-
-
-
-// let estudiantes = [];
-
-// // let estudiantesGet = [];
-// fetch('../data/data.json')
-// .then(response => response.json())
-// .then(data => {
-//     estudiantes = data;
-//     JSON.parse( localStorage.getItem( 'estudiantes')) || localStorage.setItem( 'estudiantes', JSON.stringify(estudiantes));
-    
-// })
-
-
-
-//agregar los estudiantes renderizados a la lista de estudiantes existente.
-
-// const nuevoLanzamiento = LanzamientoCreado;

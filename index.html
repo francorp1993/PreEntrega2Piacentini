@@ -24,48 +24,20 @@
     <header>
         <nav class="navbar navbar-expand-lg justify-content-between">
             <a class="navbar-brand mb-0" href="#"><h1>Discos Arg</h1></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-        
-            <!-- <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="false">
-                            Dropdown
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Something else here</a>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link disabled" href="#">Disabled</a>
-                    </li>
-                </ul>
-                <form class="form-inline my-2 my-lg-0">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
-                </form>
-            </div> -->
             <div>
-                <button id="btnModalCarrito" type="button">
-                    <img src="imagenes/carrito.png" alt=""><i class="fa-solid fa-cart-shopping"></i>
-                    <span id="carroCuenta" class="badge text-bg-secondary">0</span>
+                <button id="btnMiLanzamiento" type="button" class="btn btn-primary">
+                    !Lanza Tu Contenido Propio!
                 </button>
-            </div>
+            </div>  
+            <div>
+                <button id="btnModalCarrito" type="button" class="btn btn-primary">
+                    <img id="imgCarrito" src="imagenes/carrito.png" alt=""><i class="fa-solid fa-cart-shopping"></i>
+                    <span id="carroCuenta" class="badge bg-secondary">0</span>
+                </button>
+            </div>         
         </nav>
     </header>
+
     <main  class="container mt-2">
         <div class="row">
             <div class="col-md-6">
@@ -86,16 +58,10 @@
                 </button>
             </div>
         </div>
-        <div class="btnAgregar">
-            <button id="btnModalAgregarLaznamietno"><img src="imagenes/Addbtn.png" alt="Add Estudiante"><span>Lanza Contenido Propio!</span></button>
-        </div>
-
         <div id="listaLanzamientos" class="row mt-2">
 
-            
         </div>
     </main>
-
     <div id="modalCarrito" class="modal fade" tabindex="-1">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -131,7 +97,7 @@
     </div>
 
 
-    <div id="ModalAgregar" class="modalContainer">
+    <!-- <div id="ModalAgregar" class="modalContainer">
         <div class="modalContent">
             <span class="close">X</span>
             <h2>Agregar Lanzamiento Propio</h2>
@@ -151,17 +117,14 @@
                     <div class="col">
                         <input type="number" id="modalPrecio" placeholder="Precio">
                     </div>
-                    <!-- <div class="col">
+                    <div class="col">
                         <input type="number" id="modalParcial3" placeholder="Nota Tercer Parcial">
                     </div> -->
-                </div>
+                <!-- </div>
             </div>
             <button id="btnAgregarLanzamiento"><span>Cargar nuevo Lanzamiento</span></button>
         </div>
-    </div>
-
-
-
+    </div> -->
     <footer>
         <p> CODERHOUSE | JavaScript | C49845 | Franco Piacentini</p>
     </footer>
