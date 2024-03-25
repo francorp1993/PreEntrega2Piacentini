@@ -234,3 +234,7 @@ const getLanzamientos = async () => {
 };
 
 getLanzamientos();
+
+
+
+// -----------------------------------------PARTE SUSCRIPCION------------------------------------------------
